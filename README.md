@@ -2,6 +2,7 @@
 Taller de Programación - 2022
 
 ////////////////////Ejercicio 1
+
 Se recibe un requerimiento de un cliente el cual quiere una aplicación de consola con la 
 cual pueda obtener de una forma fácil los valores de área y perímetro de figuras
 geométricas. Las figuras requeridas son punto, círculo y triángulo. El cliente quiere que se 
@@ -20,6 +21,7 @@ indicaciones realizadas. Implemente casos de prueba unitarios para las clases qu
 adecuadas.
 
 /////////////////////Ejercicio 2
+
 Se recibe un requerimiento para que se desarrolle una aplicación de consola que permita 
 mostrar información y realizar operaciones sobre cuentas bancarias en forma interactiva por 
 consola.
@@ -55,6 +57,7 @@ negocio de la interfaz de usuario. Implemente casos de prueba unitarios para las
 considere adecuadas.
 
 //////////////////Ejercicio 3
+
 Diseñe y desarrolle una aplicación que permita gestionar un estacionamiento para 10 autos. 
 Los requerimientos son los siguientes:
 - Cuando un auto ingresa al estacionamiento se deben proporcionar los datos de 
@@ -70,6 +73,7 @@ adecuadas.
 
 
 ///////////////Ejercicio 4
+
 Diseñe y desarrolle una aplicación que permita jugar al juego del “ahorcado”. La misma 
 deberá satisfacer al menos los siguientes requerimientos:
 • La palabra para adivinar en una partida debe seleccionarse aleatoriamente de un 
@@ -85,6 +89,7 @@ adecuadas.
 
 
 ///////////////Ejercicio 5
+
 Se debe construir una clase que sirva para representar un número complejo y que se puedan 
 realizar operaciones sobre la misma. Se recibe el diagrama de clases mostrado a 
 continuación con las siguientes indicaciones:
