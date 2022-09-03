@@ -6,31 +6,40 @@ using System.Threading.Tasks;
 
 namespace Ejercicio02
 {
-   
+
     internal class Banca
     {
-       
+        string numero;
+        string titular;
+
+        public Banca(string pNumero, string pTitular)
+        {
+            this.numero = pNumero;
+            this.titular = pTitular;
+        }
+
+        public string Numero
+        {
+            get { return this.numero; }
+            set { this.numero = value; }
+        }
+
+        public string Titular
+        {
+            get { return this.titular; }
+            set { this.titular = value; }
+        }
 
 
-        
+
+
+
         //división para las cuentas diferentes (dolares y pesos)
 
         private Cuenta enDolares;
         private Cuenta enPesos;
 
-
-        public Banca()     //registra los tipos de monedas
-        {
-            Moneda objMonedaDolar = new Moneda("USD", "Dolar", "$");        //CodigoISO, nombre y simbolo del dolar
-            enDolares = new Cuenta(objMonedaDolar);
-
-            Moneda objMonedaPesoArg = new Moneda("ARS", "Peso Argentino", "$");  //CodigoISO, nombre y simbolo del peso argentino
-            enPesos = new Cuenta(objMonedaPesoArg);
-        }
-
-
-
-        public Cuenta EnPesos       
+        public Cuenta EnPesos
         {
             get { return this.enPesos; }
             set { this.enPesos = value; }
