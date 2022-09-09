@@ -12,7 +12,7 @@ namespace Ejercicio02
         string numero;
         string titular;
 
-        public Banca(string pNumero, string pTitular)
+        public Banca(string pNumero, string pTitular)       
         {
             this.numero = pNumero;
             this.titular = pTitular;

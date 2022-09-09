@@ -9,7 +9,7 @@ namespace Ejercicio02
     internal class Fachada
     {
         private RepositorioBanca objRepositorio = new RepositorioBanca();
-        //private Banca objBanca = new Banca();
+        
 
         // Menu
 
@@ -27,11 +27,10 @@ namespace Ejercicio02
 
         }
 
-        public bool CuentasExistentes(string pNumero)               //se requiere el numero de cuenta
-        {
-            //Banca objBanca = new Banca(pNumero, pTitular);
-            bool cuentaExiste = false;          //bool para verificar si existe la cuenta o no
-
+        public bool CuentasExistentes(string pNumero)               //se requiere el numero de cuenta  (documento)
+        {                                                           //cuando se realiza acredita o debita sobre la cuenta, 
+                                                                    //verifica previamente que esta exista
+            bool cuentaExiste = false;      //bool para verificar si existe la cuenta o no
 
 
             if (objRepositorio.Obtener(pNumero) != null)        //obtiene el numero de cuenta y verifica si es distinto de null
@@ -48,22 +47,15 @@ namespace Ejercicio02
                                     /////////////////////////////////////    SECCIÓN EN DOLARES    /////////////////////////////////////
 
         //Acreditar saldo
-        public void AcreditarSaldoDOLARES(double cant, string pNumero)
+        public void AcreditarSaldoDOLARES(double cant, string pNumero)              
         {
             Banca objBanca = (objRepositorio.Obtener(pNumero));     // verifica si existe la cuenta
 
-            if (objBanca != null)
-            {
-                objBanca.EnDolares.AcreditarSaldo(cant);
+                objBanca.EnDolares.AcreditarSaldo(cant);    //hace la acreditación sobre la cuenta en dolares
 
-                Console.WriteLine("Saldo: $" + objBanca.EnDolares.Saldo);   //muestra el saldo
+                Console.WriteLine("Saldo: $" + objBanca.EnDolares.Saldo);   //muestra el saldo total
                 Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("No se pudo acreditar");
-                Console.WriteLine("");
-            }
+            
         }
 
 
@@ -72,19 +64,12 @@ namespace Ejercicio02
         public void DebitarSaldoDOLARES(double cant, string pNumero)
         {
             Banca objBanca = (objRepositorio.Obtener(pNumero));     // verifica si existe la cuenta
+                        
+                objBanca.EnDolares.DebitarSaldo(cant); //debita sobre la cuenta en dolares
 
-            if (objBanca != null)
-            {
-                objBanca.EnDolares.DebitarSaldo(cant);
-
-                Console.WriteLine("Saldo: $" + objBanca.EnDolares.Saldo);   //muestra el saldo
+                Console.WriteLine("Saldo: $" + objBanca.EnDolares.Saldo);   //muestra el saldo total
                 Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("No se pudo debitar");
-                Console.WriteLine("");
-            }
+            
         }
 
 
@@ -94,21 +79,13 @@ namespace Ejercicio02
         //Acreditar saldo
         public void AcreditarSaldoPESOS(double cant, string pNumero)
         {
-            Banca objBanca = (objRepositorio.Obtener(pNumero));
-            objBanca = objRepositorio.Obtener(pNumero);     // verifica si existe la cuenta
-
-            if (objBanca != null)
-            {
-                objBanca.EnPesos.AcreditarSaldo(cant);
+            Banca objBanca = (objRepositorio.Obtener(pNumero));  // busca la cuenta existente
+            
+                objBanca.EnPesos.AcreditarSaldo(cant);  //acredita en pesos
 
                 Console.WriteLine("Saldo: $" + objBanca.EnPesos.Saldo);   //muestra el saldo
                 Console.WriteLine();
-            }
-            else
-            {
-                Console.WriteLine("No se pudo acreditar");
-                Console.WriteLine("");
-            }
+            
 
         }
 
@@ -118,17 +95,10 @@ namespace Ejercicio02
 
         public void DebitarSaldoPESOS(double cant, string pNumero)
         {
-            Banca objBanca = (objRepositorio.Obtener(pNumero));    // verifica si existe la cuenta
+            Banca objBanca = (objRepositorio.Obtener(pNumero));    // busca la cuenta existente
 
-            if (objBanca != null)
-            {
-                objBanca.EnPesos.DebitarSaldo(cant);
-            }
-            else
-            {
-                Console.WriteLine("No se pudo debitar");
-                Console.WriteLine("");
-            }
+            objBanca.EnPesos.DebitarSaldo(cant);
+
         }
 
 

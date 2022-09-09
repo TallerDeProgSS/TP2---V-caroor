@@ -13,21 +13,21 @@ namespace Ejercicio02
             int opcion;
             int num;
             int opcion2;
-            Fachada objFachada = new Fachada();  //Banca objCuenta = new Banca();    //se crea primero para que "guarde" la información
+            Fachada objFachada = new Fachada();      //se crea primero para que "guarde" la información
             do 
             { 
 
-                Console.WriteLine("1. Crear cuenta");
-                Console.WriteLine("2. Ingresar cuenta");
-                Console.Write("Ingrese un número: ");
+                Console.WriteLine("1. Crear cuenta");           //crea una nueva cuenta unificada
+                Console.WriteLine("2. Ingresar cuenta");        //ingresa a su cuenta a partir del documento
+                Console.Write("Ingrese un número: ");           //selecciona una opción
                 opcion2 = Convert.ToInt32(Console.ReadLine());
 
                 Console.Clear();
-            //do
-            //{ 
-                switch (opcion2)
+            
+             
+                switch (opcion2)        //a partir de la opcion que se seleccione, hará distintas acciones.
                 {
-                    case 1:
+                    case 1:     //al seleccionar la opción 1, se crea una nueva cuenta 
                         {
                             
                                 Console.Write("Ingrese Titular: ");
@@ -48,7 +48,7 @@ namespace Ejercicio02
 
 
                                 Console.Clear();
-                                //toda la pantalla
+                                //limpia toda la pantalla
                             }
                             else                                        //si es igual a true, entonces documento ya existe.
                             {
